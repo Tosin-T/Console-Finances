@@ -93,3 +93,47 @@ for(i=0;i<finances.length;i++){
   total+=finances[i][1];
 }
 console.log("Total"+total)
+
+
+var change=[]
+
+for(i=0;i<finances.length-1;i++){
+  var x=finances[i][1]
+var y = finances[i+1][1]-x
+  console.log(y)
+}
+
+// finances[i][1]
+//   finances[i][1]
+//   // starting loop value I
+//   // var x=0
+//   // var y=I- x(the change)
+//   // 
+//   // repeat with loop +1
+//   // print var y
+// var previousNo=finances[i][1]
+// var nextNo=finances[i++][1]
+
+
+//   console.log(previousNo-nextNo)
+// }
+
+var maxNumber = -Infinity; // Initialize maxNumber to negative infinity to handle negative numbers
+
+for (var i = 0; i < finances.length; i++) {
+  var number = finances[i][1]; // Access the number in each pair
+  if (number > maxNumber) {
+    maxNumber = number; // Update maxNumber if a larger number is found
+  }
+}
+
+console.log("The maximum number is: " + maxNumber);
+var maxNumber = Infinity; // Initialize maxNumber to negative infinity to handle negative numbers
+
+for (var i = 0; i < finances.length; i++) {
+  var number = finances[i][1]; // Access the number in each pair
+  if (number < maxNumber) {
+    maxNumber = number; // Update maxNumber if a larger number is found
+  }
+}
+console.log("The maximum number is: " + maxNumber);
