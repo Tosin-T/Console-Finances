@@ -94,15 +94,18 @@ for(i=0;i<finances.length;i++){
 }
 console.log("Total"+total)
 
-
-var change=[]
-
+sumOfchanges=(0)
+// difference in finance
 for(i=0;i<finances.length-1;i++){
   var x=finances[i][1]
-var y = finances[i+1][1]-x
-  console.log(y)
+var y = finances[i+1][1]-x;
+var filler=
+sumOfchanges+=y
 }
+console.log(sumOfchanges)
+var z= sumOfchanges/=(finances.length-(1))
 
+console.log(z)
 // finances[i][1]
 //   finances[i][1]
 //   // starting loop value I
