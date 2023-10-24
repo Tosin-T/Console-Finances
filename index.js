@@ -99,44 +99,41 @@ sumOfchanges=(0)
 for(i=0;i<finances.length-1;i++){
   var x=finances[i][1]
 var y = finances[i+1][1]-x;
-var filler=
 sumOfchanges+=y
 }
 console.log(sumOfchanges)
 var z= sumOfchanges/=(finances.length-(1))
-
-console.log(z)
-// finances[i][1]
-//   finances[i][1]
-//   // starting loop value I
-//   // var x=0
-//   // var y=I- x(the change)
-//   // 
-//   // repeat with loop +1
-//   // print var y
-// var previousNo=finances[i][1]
-// var nextNo=finances[i++][1]
+console.log(Math.round(100*z)/100);
 
 
-//   console.log(previousNo-nextNo)
-// }
+// max profit increase
+var maxChange=[]
+var maxChangeMonth=[]
 
-var maxNumber = -Infinity; // Initialize maxNumber to negative infinity to handle negative numbers
+for(i=1;i<finances.length;i++){
 
-for (var i = 0; i < finances.length; i++) {
-  var number = finances[i][1]; // Access the number in each pair
-  if (number > maxNumber) {
-    maxNumber = number; // Update maxNumber if a larger number is found
+var currentMonthDate=finances[i][0]
+var currentMonth=finances[i][1]
+var previousMounth=finances[i-1][1]
+var change= currentMonth-previousMounth;
+if(change>maxChange){
+  maxChange=change;
+  maxChangeMonth=currentMonthDate
+}
+}
+console.log("the month with the greatest increase in profit: " +maxChangeMonth +" " + maxChange)
+
+var maxChange = []
+var maxChangeMonth = "";
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonth = finances[i][0];
+  var previousMonthRevenue = finances[i - 1][1];
+  var currentMonthRevenue = finances[i][1];
+  var change = currentMonthRevenue - previousMonthRevenue;
+
+  if (change > maxChange) {
+    maxChange = change;
+    maxChangeMonth = currentMonth;
   }
 }
-
-console.log("The maximum number is: " + maxNumber);
-var maxNumber = Infinity; // Initialize maxNumber to negative infinity to handle negative numbers
-
-for (var i = 0; i < finances.length; i++) {
-  var number = finances[i][1]; // Access the number in each pair
-  if (number < maxNumber) {
-    maxNumber = number; // Update maxNumber if a larger number is found
-  }
-}
-console.log("The maximum number is: " + maxNumber);
