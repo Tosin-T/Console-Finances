@@ -88,25 +88,31 @@ var finances = [
 ];
 var total=(0)
 console.log("Financial Analysis");
+document.getElementById("tm").innerHTML = "Total Months: "+finances.length;
 console.log("Total Months: "+finances.length);
+
+// total sum
 for(i=0;i<finances.length;i++){
   total+=finances[i][1];
 }
-console.log("Total"+total)
+console.log("Total "+("$")+total)
+document.getElementById("ts").innerHTML = "Total "+("$")+total
 
-sumOfchanges=(0)
+
+
 // difference in finance
+sumOfchanges=(0)
 for(i=0;i<finances.length-1;i++){
   var x=finances[i][1]
 var y = finances[i+1][1]-x;
 sumOfchanges+=y
 }
-console.log(sumOfchanges)
 var z= sumOfchanges/=(finances.length-(1))
-console.log(Math.round(100*z)/100);
+var q= Math.round(100*z)/100;
+console.log("Average change:"+ " "+q)
+document.getElementById("ac").innerHTML = "Average change:"+ " "+q
 
-
-// max profit increase
+// greatest profit increase
 var maxChange=[]
 var maxChangeMonth=[]
 
@@ -121,19 +127,22 @@ if(change>maxChange){
   maxChangeMonth=currentMonthDate
 }
 }
-console.log("the month with the greatest increase in profit: " +maxChangeMonth +" " + maxChange)
+console.log("The month with the greatest increase in profit: " +maxChangeMonth +" " +"$"+ maxChange);
+document.getElementById("bi").innerHTML ="The month with the greatest increase in profit: " +maxChangeMonth +" " +"$"+ maxChange
+// greatest loss in profit
 
-var maxChange = []
-var maxChangeMonth = "";
+var biggestLoss =[Infinity]
+var maxChangeMonth=[]
+for(i=1;i<finances.length;i++){
+  var currentMonthDate=finances[i][0]
+  var currentMonth=finances[i][1];
+  var previousMounth= finances[i-1][1];
+  var change=currentMonth-previousMounth;
 
-for (var i = 1; i < finances.length; i++) {
-  var currentMonth = finances[i][0];
-  var previousMonthRevenue = finances[i - 1][1];
-  var currentMonthRevenue = finances[i][1];
-  var change = currentMonthRevenue - previousMonthRevenue;
-
-  if (change > maxChange) {
-    maxChange = change;
-    maxChangeMonth = currentMonth;
-  }
+if (change<biggestLoss){
+biggestLoss= change
+maxChangeMonth= currentMonthDate
+};
 }
+console.log("the month with the greatest loss in profit: "+ currentMonthDate + " " +"$"+biggestLoss);
+document.getElementById("bd").innerHTML ="The month with the greatest loss in profit: "+ currentMonthDate + " "+"$" +biggestLoss
