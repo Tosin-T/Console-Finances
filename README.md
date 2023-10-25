@@ -6,8 +6,7 @@ Console-finances is Javascript focused project with the aim of manipulating a gi
 
 This project can be downloaded from GitHub.
 
-To download the content, go to the portfolio page which can be found here: https://github.com/Tosin-T
-
+To download the content, go to the portfolio page which can be found here: https://tosin-t.github.io/Console-Finances/
 From this page to download the content go to the code button tab. click the link and below should be a drop down menu with "Download Zip."
 
 Press this and the file will begin to download to a file location of your choice.
